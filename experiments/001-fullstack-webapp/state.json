@@ -1,0 +1,43 @@
+{
+  "experiment_id": "001-fullstack-webapp",
+  "status": "complete",
+  "pipeline": "intake-to-design",
+  "stage": "complete",
+  "checkpoints": {
+    "intake": "completed",
+    "qualify": "completed",
+    "proposal": "completed",
+    "analyze": "completed",
+    "board_meeting": "completed",
+    "design": "completed",
+    "package": "completed"
+  },
+  "flags": {
+    "qualify_verdict": "go-with-conditions",
+    "decision_approved": true,
+    "package_delivered": true
+  },
+  "files": {
+    "rfp": "intake/00-rfp.md",
+    "qualification": "intake/01-qualification.md",
+    "clarifying_questions": "intake/02-clarifying-questions.md",
+    "proposal": "intake/02-proposal.md",
+    "requirements": "analysis/03-requirements.md",
+    "minutes": "board/minutes-legacy-extend-vs-sidecar.md",
+    "decision": "analysis/04-decision.md",
+    "design": "design/05-design.md",
+    "design_package": "design/design-package.md"
+  },
+  "pending_board_proposal": "Extend the legacy PHP/AngularJS app in place for Stripe/QuickBooks reconciliation features vs introduce a thin modern API/sidecar beside it that owns integrations and sync, with the legacy UI calling the sidecar.",
+  "board_decision_slug": "legacy-extend-vs-sidecar",
+  "started_at": "2026-07-23T12:00:00Z",
+  "last_updated": "2026-07-23T19:45:00Z",
+  "seed": {
+    "source": "upwork-proposal.md",
+    "note": "Stage 0 intake pre-seeded"
+  },
+  "dry_run": {
+    "completed": true,
+    "note": "Blackboard artifacts and state progression validated with simulated board positions; not a live multi-agent token spend. Re-run stages live via /team:ship-design for real subagent debate."
+  }
+}
