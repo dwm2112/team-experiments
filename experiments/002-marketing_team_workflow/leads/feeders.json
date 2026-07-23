@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "description": "Allowlist of agents and humans permitted to create HubSpot leads during surface. Add entries to extend without redesigning the pipeline.",
+  "feeders": [
+    {
+      "id": "agent:search-specialist",
+      "type": "agent",
+      "display_name": "Search Specialist",
+      "role_id": "search-specialist",
+      "enabled": true,
+      "permissions": {
+        "create_contacts": true,
+        "create_companies": true,
+        "create_deals": false,
+        "auto_qualify": false
+      },
+      "defaults": {
+        "lead_source_detail": "agent-surface-search",
+        "mql_criteria_version": "v1"
+      }
+    },
+    {
+      "id": "agent:startup-analyst",
+      "type": "agent",
+      "display_name": "Startup Analyst",
+      "role_id": "startup-analyst",
+      "enabled": true,
+      "permissions": {
+        "create_contacts": true,
+        "create_companies": true,
+        "create_deals": false,
+        "auto_qualify": false
+      },
+      "defaults": {
+        "lead_source_detail": "agent-surface-market-opportunity",
+        "mql_criteria_version": "v1"
+      }
+    },
+    {
+      "id": "agent:seo-planner",
+      "type": "agent",
+      "display_name": "SEO Content Planner",
+      "role_id": "seo-planner",
+      "enabled": true,
+      "permissions": {
+        "create_contacts": true,
+        "create_companies": false,
+        "create_deals": false,
+        "auto_qualify": false
+      },
+      "defaults": {
+        "lead_source_detail": "agent-surface-seo-gap",
+        "mql_criteria_version": "v1"
+      }
+    }
+  ],
+  "how_to_add_human": {
+    "example": {
+      "id": "human:founder",
+      "type": "human",
+      "display_name": "Founder",
+      "role_id": null,
+      "enabled": true,
+      "permissions": {
+        "create_contacts": true,
+        "create_companies": true,
+        "create_deals": true,
+        "auto_qualify": false
+      },
+      "defaults": {
+        "lead_source_detail": "human-manual",
+        "mql_criteria_version": "v1"
+      }
+    }
+  }
+}
