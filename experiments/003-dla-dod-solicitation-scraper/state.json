@@ -1,0 +1,31 @@
+{
+  "experiment_id": "003-dla-dod-solicitation-scraper",
+  "status": "in_progress",
+  "pipeline": "intake-to-design",
+  "stage": "qualify",
+  "checkpoints": {
+    "intake": "completed",
+    "qualify": "awaiting_approval",
+    "proposal": "pending",
+    "analyze": "pending",
+    "board_meeting": "pending",
+    "design": "pending",
+    "package": "pending"
+  },
+  "flags": {
+    "qualify_verdict": null,
+    "decision_approved": false,
+    "package_delivered": false
+  },
+  "files": {
+    "rfp": "intake/00-rfp.md",
+    "qualification": "intake/01-qualification.md"
+  },
+  "board_decision_slug": null,
+  "started_at": "2026-07-24T03:16:01Z",
+  "last_updated": "2026-07-24T03:20:00Z",
+  "seed": {
+    "source": "c:\\Users\\softw\\Downloads\\Python Web Scraping Specialist for DLA_DoD Solicitations.txt",
+    "note": "Upwork posting captured into intake/00-rfp.md"
+  }
+}
