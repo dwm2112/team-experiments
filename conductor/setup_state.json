@@ -1,0 +1,53 @@
+{
+  "status": "complete",
+  "project_type": "brownfield",
+  "current_section": "styleguides",
+  "current_question": 2,
+  "completed_sections": [
+    "product",
+    "guidelines",
+    "tech_stack",
+    "workflow",
+    "styleguides"
+  ],
+  "answers": {
+    "project_name": "team-experiments",
+    "description": "A framework for building a freelance company staffed by orchestrated AI agent teams",
+    "problem": "Freelance/agency work (design, proposals, marketing) is manual and hard to run repeatably at quality",
+    "users": "Solo operators / founders running an AI-augmented freelance or agency business",
+    "goals": [
+      "Repeatable, high-quality agent pipelines from intake to delivery",
+      "Blackboard + checkpoint discipline so runs are resumable and human-gated"
+    ],
+    "voice": "Concise and direct",
+    "principles": [
+      "Blackboard over context memory",
+      "Portability across harnesses (one source of truth)",
+      "Human checkpoints (mandatory halts)",
+      "Anti-loop discipline"
+    ],
+    "substrate": "Markdown workflows + JSON state; Python tooling/scripts expected soon",
+    "harnesses": "Both Claude Code and Cursor, portable from one source of truth",
+    "frontend": "None (runs inside AI harness chat)",
+    "data": "HubSpot CRM (marketing SOR); blackboard markdown + state.json for artifacts",
+    "infra": "Locally inside the AI harness against a git repo",
+    "tdd": "Flexible \u2014 tests recommended for complex logic; N/A for pure markdown",
+    "commits": "Conventional Commits",
+    "review": "Required for non-trivial changes",
+    "checkpoints": "At defined pipeline gates \u2014 qualify, board decision, deliver/package",
+    "styleguide_langs": ["Python"],
+    "existing_configs": "Generate fresh guide standardized on ruff + black + type hints"
+  },
+  "files_created": [
+    "conductor/setup_state.json",
+    "conductor/index.md",
+    "conductor/product.md",
+    "conductor/product-guidelines.md",
+    "conductor/tech-stack.md",
+    "conductor/workflow.md",
+    "conductor/tracks.md",
+    "conductor/code_styleguides/python.md"
+  ],
+  "started_at": "2026-07-24T11:35:00-07:00",
+  "last_updated": "2026-07-24T11:40:00-07:00"
+}
