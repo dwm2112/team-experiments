@@ -1,43 +1,68 @@
 {
   "experiment_id": "002-marketing_team_workflow",
-  "status": "ready",
-  "pipeline": null,
-  "stage": null,
+  "status": "complete",
+  "pipeline": "marketing-client",
+  "stage": "complete",
   "checkpoints": {
     "surface": null,
     "qualify_lead": null,
     "enrich": null,
-    "board_meeting": null,
+    "board_meeting": "completed",
     "nurture": null,
     "handoff_or_close": null,
     "retain_advocate": null,
-    "client_intake": null,
-    "qualify": null,
-    "brief": null,
-    "campaign_design": null,
-    "package": null,
+    "client_intake": "completed",
+    "qualify": "completed",
+    "brief": "completed",
+    "campaign_design": "completed",
+    "package": "completed",
     "execute_hooks": null
   },
   "flags": {
-    "qualify_verdict": null,
-    "decision_approved": false,
+    "qualify_verdict": "go",
+    "decision_approved": true,
     "needs_board": false,
     "nurture_send_approved": false,
-    "package_delivered": false,
-    "hubspot_pending": false
+    "package_delivered": true,
+    "hubspot_pending": true
   },
   "hubspot": {
     "experiment_id_property": "002-marketing_team_workflow",
     "contact_ids": [],
     "company_ids": [],
-    "deal_ids": []
+    "deal_ids": [],
+    "pending_company_upsert": {
+      "name": "Atlas Sovereign",
+      "properties": {
+        "experiment_id": "002-marketing_team_workflow",
+        "surfaced_by": "intake",
+        "pipeline": "marketing-client",
+        "engagement_type": "branding_kickoff_campaign",
+        "icp_segments": "SMB|nonprofit|freelance",
+        "pipeline_stage_internal": "delivered"
+      }
+    }
   },
-  "files": {},
+  "files": {
+    "client_brief_raw": "intake/00-client-brief.md",
+    "qualification": "intake/01-qualification.md",
+    "campaign_brief": "briefs/campaign-brief.md",
+    "minutes": "board/minutes-atlas-sovereign-smb-coworker-kickoff.md",
+    "decision": "analysis/marketing-decision.md",
+    "channel_plan": "campaigns/01-channel-plan.md",
+    "content_seo": "campaigns/02-content-seo.md",
+    "measurement": "campaigns/03-measurement.md",
+    "activation": "campaigns/04-activation.md",
+    "campaign_package": "campaigns/campaign-package.md"
+  },
   "pending_board_proposal": null,
-  "board_decision_slug": null,
-  "started_at": null,
-  "last_updated": "2026-07-23T23:30:00Z",
-  "seed": {
-    "note": "Marketing Team workspace seeded. Start with /team:marketing-pipeline gtm or /team:marketing-pipeline client."
+  "board_decision_slug": "atlas-sovereign-smb-coworker-kickoff",
+  "started_at": "2026-07-24T00:47:00Z",
+  "last_updated": "2026-07-24T02:10:00Z",
+  "completed_at": "2026-07-24T02:10:00Z",
+  "client": {
+    "name": "Atlas Sovereign",
+    "division": "Agentic AI Division",
+    "engagement": "branding + kickoff marketing campaign"
   }
 }
