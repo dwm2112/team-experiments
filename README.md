@@ -46,6 +46,24 @@ Leads/deals live in **HubSpot**. Briefs, minutes, and packages live on the exper
 
 Workspace: [`experiments/002-marketing_team_workflow/`](experiments/002-marketing_team_workflow/).
 
+### Documentation (any scope)
+
+```
+plan → draft (architecture + reference + tutorial + integrations) → assemble → deliver
+```
+
+Read-only over its sources; produces a **documentation package** under `docs/`. Point it at an experiment, the whole repo, or a code deliverable.
+
+| Scope | Claude Code | Cursor |
+|-------|-------------|--------|
+| Documentation | `/team:docs` | `/team-docs` |
+
+| Invocation | Meaning |
+|------------|---------|
+| `/team-docs experiment experiments/<id>` | Document an experiment + how to run/resume it |
+| `/team-docs repo` | Document the whole team-experiments system |
+| `/team-docs codebase <path>` | Document a code deliverable |
+
 ### Quick start — engineering
 
 1. Drop an RFP into a new experiment (or use `experiments/001-fullstack-webapp/`).
@@ -86,6 +104,14 @@ Portability: real logic lives once under `workflows/`. Harness shims are thin wr
 /plugin install comprehensive-review backend-development cloud-infrastructure database-design business-analytics before-you-build conductor ship-mate full-stack-orchestration
 ```
 
+**Claude Code — documentation plugins (for `/team:docs`):**
+
+```
+/plugin install documentation-generation
+```
+
+Provides `docs-architect`, `reference-builder`, `tutorial-engineer`, `api-documenter`, and `mermaid-expert`. In Cursor these map to built-in Task subagents — see [workflows/lib/roles.md](workflows/lib/roles.md).
+
 **Claude Code — marketing plugins:**
 
 ```
@@ -117,5 +143,7 @@ Portability: real logic lives once under `workflows/`. Harness shims are thin wr
 |----|---------|
 | `001-fullstack-webapp` | Engineering intake-to-design dry-run fixture |
 | `002-marketing_team_workflow` | Marketing Team dual-pipeline workspace |
+
+Run `/team-docs experiment experiments/<id>` on any completed experiment to generate its documentation package.
 
 See `upwork-proposal.md` for the original engineering proposal template that was generalized into `templates/proposal.md`.

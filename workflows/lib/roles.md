@@ -34,6 +34,18 @@ Detect harness:
 | `customer-success` | Retention / advocacy | `generalPurpose` | `customer-support` | Post-sale CX, evangelist motions |
 | `social-publisher` | Social publishing | `generalPurpose` | `social-publishing-publisher` | Requires SocialClaw API key |
 
+## Mapping — Documentation (team-docs)
+
+| Role ID | Role | Cursor `subagent_type` | Claude Code agent | Notes |
+|---------|------|------------------------|-------------------|-------|
+| `docs-architect` | System / architecture author | `documentation-generation-docs-architect` | `docs-architect` | Long-form guides; owns the doc plan |
+| `reference-builder` | Exhaustive reference author | `reference-builder` | `reference-builder` | Commands, workflows, roles, config tables |
+| `tutorial-engineer` | Getting-started / how-to author | `documentation-generation-tutorial-engineer` | `tutorial-engineer` | Step-by-step run/resume guides |
+| `api-documenter` | Integration / API contract author | `documentation-generation-api-documenter` | `api-documenter` | Only when integrations exist (HubSpot, n8n, external APIs) |
+| `diagram-specialist` | Diagram author | `mermaid-expert` | `mermaid-expert` | Mermaid flow / architecture / sequence diagrams |
+
+House style: prefer the `hads` skill (human + AI dual-readable) format; use the `architecture-decision-records` skill format for decisions; `ship-mate` `scan` may seed repo-scope inventory.
+
 ## Resolution algorithm
 
 ```
@@ -76,6 +88,14 @@ Optional parallel discovery during analyze (examples):
 - Payments / billing → `backend-architect` or `generalPurpose` with payment focus  
 - Cloud / hosting → `cloud-architect`  
 - Security surface → `security-auditor`  
+
+## Documentation role sequence (role IDs)
+
+1. `docs-architect` → writes `docs/00-doc-plan.md`, then `docs/01-architecture.md`
+2. `reference-builder` → `docs/02-reference.md` ┐
+3. `tutorial-engineer` → `docs/03-tutorial.md`  ├ parallel fan-out (read the plan)
+4. `api-documenter` → `docs/04-integrations.md` ┘ (only if integrations exist)
+5. `diagram-specialist` → finalize Mermaid diagrams in `docs/01-architecture.md`
 
 ## GTM surface feeders (default)
 
